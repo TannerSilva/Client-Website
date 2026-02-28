@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Grey Background */
+body {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #252525, #6e6e6e);
+    font-family: Arial, sans-serif;
+    background-repeat: no-repeat;
+}
+
+/* Header Section */
+header.header {
+    display: flex;
+    align-items: center;
+    height: 180px;
+    background: #111;
+    padding: 0 40px;
+    position: relative;
+     flex-wrap: nowrap;
+}
+
+.logo-wrapper {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    flex-shrink: 0;  
+    transform: translateY(-15px);
+}
+
+/* Logo Image */
+.logo-img {
+    display: block;
+    height: 60px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    object-fit: contain;
+    transform: scaleY(2.2);
+    transition: transform 0.35s ease;
+}
+
+/* Logo Hover Grow */
+.logo-wrapper:hover .logo-img {
+    transform: scaleY(2.2) scale(1.1);
+}
+
+/* Underline Animation */
+.logo-wrapper::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -45px;
+    width: 30%;
+    height: 2px;
+    background: white;
+    transform: translateX(-50%);
+    transition: width 0.35s ease;
+}
+
+.logo-wrapper:hover::after {
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1; 
+}
+
+.navbar ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+
+    background: rgba(0,0,0,0.6);
+    padding: 12px 35px;
+    border-radius: 12px;
+}
+
+/* Links */
+.navbar a {
+    padding-left: 10px;
+    display: inline-block;
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: 0.3s ease;
+}
+
+/* Hover */
+.navbar a:hover {
+    color: #cfcfcf;
+    transform: scale(1.2);
+}
+/* Tire */
+.navbar a::before {
+    filter: invert(1);
+    display: inline-block;
+    vertical-align: -3px;
+    margin-left: -10px;
+    margin-right: 6px;
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-image: url("tire.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+  
+    transform: rotate(0deg);
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+.navbar a:hover::before {
+    opacity: 1;
+    animation: spinTire 0.6s;
+}
+
+.navbar a.active::before {
+    opacity: 1;
+    animation: none;
+}
+
+@keyframes spinTire {
+    from {
+        transform: translate(50%) scale(0.5) rotate(0deg);
+    }
+    to {
+        transform: translate(0%) scale(1) rotate(-360deg);
+    }
+}
+
+@media (max-width: 1250px) {
+    header.header {
+        flex-direction: column;
+        height: 160px;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    header.header {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        gap: 15px;
+        top: -20px;
+    }
+
+    .logo-wrapper {
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+
+    .logo-img {
+        height: 40px;
+        transform: scaleY(1.6);
+    }
+
+    .navbar {
+        justify-content: center;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+
+    .navbar a {
+        font-size: 14px;
+    }
+}

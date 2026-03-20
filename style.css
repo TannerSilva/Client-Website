@@ -15,14 +15,10 @@ body::after {
     content: "";
     position: fixed;
     inset: 0;
-
     background-image: url("Background-overlay-tire.webp");
     background-repeat: repeat;
-    background-size: 2000px;
-    
-
-    opacity: .2;
-
+    background-size: cover; /* instead of 2000px */
+    opacity: 0.2;
     pointer-events: none;
     z-index: -1;
 }
@@ -115,7 +111,7 @@ header.header::before {
 .navbar a {
     scale: 1.4;
     padding-left: 10px;
-    display: inline-block;
+    display: flex;
     position: relative;
     color: #910000;
     text-decoration: none;
@@ -147,8 +143,9 @@ header.header::before {
 /* Tire */
 .navbar a::before {
     filter: invert(1);
-    display: inline-block;
-    vertical-align: -3px;
+    display: flex;
+    vertical-align: -40px;
+    margin-top: -2px;
     margin-left: -10px;
     margin-right: 6px;
     content: "";
@@ -157,6 +154,7 @@ header.header::before {
     background-image: url("tire.png");
     background-size: contain;
     background-repeat: no-repeat;
+    translate: translateY(-6px)
 
   
     transform: rotate(0deg);
@@ -491,6 +489,10 @@ header.header::before {
         height: 160px;
         gap: 15px;
     }
+
+    .navbar {
+        margin-top: 30px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -516,15 +518,42 @@ header.header::before {
 
     .navbar {
         justify-content: center;
+        margin-left: -25px;
     }
 
     .navbar ul {
         flex-direction: column;
-        gap: 15px;
+        gap: 20px;
         padding: 15px 20px;
+        align-items: center;
     }
 
     .navbar a {
         font-size: 14px;
+    }
+
+    .event {
+        flex-direction: column; /* stack vertically */
+        align-items: center;
+        gap: 20px;
+    }
+
+    .event-side {
+        width: 100%; /* take full width */
+        max-width: 400px; /* optional max size */
+    }
+
+    .event-text {
+        width: 100%;
+    }
+
+    .fatheremmet-side-img,
+    .felon-side-img {
+        width: 100%; /* scale images */
+        height: auto;
+    }
+
+    body::after {
+        background-size: contain;
     }
 }

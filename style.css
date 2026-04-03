@@ -9,6 +9,7 @@ body {
     background: linear-gradient(to bottom, #101010, #272727);
     font-family: Arial, sans-serif;
     background-repeat: no-repeat;
+    overflow-x: hidden;
 }
 
 body::after {

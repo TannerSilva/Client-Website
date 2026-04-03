@@ -591,6 +591,7 @@ header.header::before {
     }
 
     .fatheremmet-side-img,
+
     .felon-side-img {
         width: 100%; /* scale images */
         height: auto;
@@ -598,6 +599,14 @@ header.header::before {
 
     body::after {
         background-size: contain;
+    }
+     html, body {
+        overflow-x: hidden; /* disables horizontal scroll */
+    }
+
+    body {
+        touch-action: pan-x pan-y; /* prevents zooming and sliding weirdness */
+        overscroll-behavior-x: none; /* disables horizontal overscroll */
     }
     
 }
@@ -655,5 +664,15 @@ header.header::before {
         padding: 15px;
         font-size: 15px;
     }
+
+    html, body {
+        overflow-x: hidden;
+    }
+
+    body {
+        touch-action: pan-x pan-y;
+        overscroll-behavior-x: none;
+    }
 }
+
 

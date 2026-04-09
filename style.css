@@ -614,6 +614,9 @@ header.header::before {
 @media (orientation: landscape) and (max-width: 900px) {
 
     header.header {
+        display: flex;
+        align-items: center;     
+        justify-content: space-between;
         height: 100px;
         padding: 10px 20px;
     }
@@ -624,14 +627,16 @@ header.header::before {
     }
 
     .navbar ul {
-        flex-direction: row;
-        gap: 25px;
+         margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
     }
 
     .navbar a {
         font-size: 12px;
         transform: scale(1);
-        margin-top: 100px;
+        
     }
 
     .hero {

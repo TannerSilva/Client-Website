@@ -631,6 +631,7 @@ header.header::before {
     .navbar a {
         font-size: 12px;
         transform: scale(1);
+        margin-top: 100px;
     }
 
     .hero {
